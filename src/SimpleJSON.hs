@@ -1,4 +1,14 @@
-module SimpleJSON where
+module SimpleJSON (
+  JValue(..),
+  getString,
+  getArray,
+  getBool,
+  getDouble,
+  getInt,
+  getObject,
+  isNull,
+  hello
+) where
 
 data JValue = JString String
             | JNumber Double
@@ -31,6 +41,8 @@ getObject _ = Nothing
 getArray :: JValue -> Maybe [JValue]
 getArray (JArray a) = Just a
 getArray _ = Nothing
+
+isNull v = v == JNull
 
 hello :: String
 hello = "Olá do módulo SimpleJSON!"
