@@ -4,22 +4,29 @@ name:                projeto-lib
 version:             0.1.0.0
 -- synopsis:
 -- description:
-homepage:            https://github.com/githubuser/projeto-lib#readme
+homepage:            https://github.com/gfcarvalhos/lib-json-haskell#readme
 license:             BSD-3-Clause
 license-file:        LICENSE
-author:              Author name here
-maintainer:          example@example.com
-copyright:           2025 Author name here
+author:              Gabriel Felipe Carvalho Silva
+maintainer:          gfc.silva@discente.ufma.br
+copyright:           2025 Gabriel Felipe Carvalho Silva
 category:            Web
 build-type:          Simple
 extra-source-files:  README.md
                      CHANGELOG.md
 
-executable projeto-lib
+library
   hs-source-dirs:      src
+  exposed-modules:     SimpleJSON
+  build-depends:       base >=4.7 && <5
+  default-language:    Haskell2010
+  
+executable projeto-lib
+  hs-source-dirs:      app
   main-is:             Main.hs
   default-language:    Haskell2010
-  build-depends:       base >= 4.7 && < 5
+  build-depends:       base >= 4.7 && < 5,
+                       projeto-lib
   ghc-options:         -Wall
                        -Wcompat
                        -Widentities
@@ -32,4 +39,4 @@ executable projeto-lib
 
 source-repository head
   type:     git
-  location: https://github.com/githubuser/projeto-lib
+  location: https://github.com/gfcarvalhos/lib-json-haskell
