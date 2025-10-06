@@ -1,0 +1,26 @@
+# Arquivos de build do Stack
+.stack-work/
+
+# Arquivos de build do Cabal
+dist/
+dist-newstyle/
+
+# Executáveis gerados
+*.hi
+*.o
+*.exe
+*.out
+*.stack-work/
+
+# Arquivos de logs temporários
+*.log
+
+# Arquivos de backup do editor
+*~
+
+# Configurações locais do VSCode ou IDE
+.vscode/
+.idea/
+
+# Binários compilados
+/main
