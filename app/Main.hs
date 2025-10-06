@@ -1,6 +1,7 @@
-module Main where
+module Main (main) where
 
 import SimpleJSON
 
 main :: IO ()
-main = putStrLn hello
+main = do
+  print (JObject [("foo", JNumber 1), ("bar", JBool False)])

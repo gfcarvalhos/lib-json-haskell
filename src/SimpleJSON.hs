@@ -6,8 +6,7 @@ module SimpleJSON (
   getDouble,
   getInt,
   getObject,
-  isNull,
-  hello
+  isNull
 ) where
 
 data JValue = JString String
@@ -44,5 +43,3 @@ getArray _ = Nothing
 
 isNull v = v == JNull
 
-hello :: String
-hello = "Olá do módulo SimpleJSON!"
