@@ -43,4 +43,3 @@ projeto-lib/
 
 - Gabriel Felipe Carvalho Silva
 - Ítalo José Silva Reis
-- Daniel...
