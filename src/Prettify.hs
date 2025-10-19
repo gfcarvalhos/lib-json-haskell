@@ -2,12 +2,10 @@ module Prettify where
 
 import SimpleJSON
 import Prelude hiding ((<>))
+import Numeric (showHex)
 
 data Doc =  ToBeDefined
   deriving (Show) 
-
-string:: String -> Doc
-string str = enclose '"' '"'.hcat.map oneChar
 
 text:: String -> Doc
 text str = undefined
