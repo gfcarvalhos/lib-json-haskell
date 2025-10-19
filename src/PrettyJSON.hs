@@ -3,7 +3,7 @@ module PrettyJSON (
 ) where
 
 import SimpleJSON (JValue(..))
-import Prettify (Doc, (<>), char, double, fsep, hcat, punctuate, text)
+import Prettify (Doc, (<>), char, double, fsep, hcat, punctuate, text, compact, pretty)
 import Data.Char (ord)
 import Data.Bits (shiftR, (.&.))
 import Numeric (showHex)
