@@ -1,7 +1,9 @@
-module PrettyJSON where
+module PrettyJSON (
+    renderJValue
+) where
 
-import SimpleJSON
-import Prettify
+import SimpleJSON (JValue(..))
+import Prettify (Doc, (<>), char, double, fsep, hcat, punctuate, text)
 import Data.Char (ord)
 import Data.Bits (shiftR, (.&.))
 import Numeric (showHex)
