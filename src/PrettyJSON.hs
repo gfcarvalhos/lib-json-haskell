@@ -9,11 +9,16 @@ import Numeric (showHex)
 import Prelude hiding ((<>))
 
 renderJValue :: JValue -> Doc
-renderJValue (JBool True) = text "true"
+renderJValue (JBool True)  = text "true"
 renderJValue (JBool False) = text "false"
-renderJValue JNull = text "null"
+renderJValue JNull         = text "null"
 renderJValue (JNumber num) = double num
 renderJValue (JString str) = string str
+renderJValue (JArray ary) = series '[' ']' renderJValue ary
+renderJValue (JObject obj) = series '{' '}' field obj
+    where field (name,val) = string name
+                          <> text ": "
+                          <> renderJValue val
 
 string :: String -> Doc
 string str = enclose '"' '"' (hcat (map oneChar str))
@@ -50,3 +55,7 @@ hexEscape :: Char -> Doc
 hexEscape c | d < 0x10000 = smallHex d
     | otherwise = astral (d - 0x10000)
     where d = ord c
+
+series :: Char -> Char -> (a -> Doc) -> [a] -> Doc
+series open close item = enclose open close
+    . fsep . punctuate (char ',') . map item
